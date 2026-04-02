@@ -1,0 +1,53 @@
+package Programs;
+
+import java.util.Scanner;
+public class Calculator {
+	public void checker(int val1, int val2) {
+		if(val1>val2 || val2>val1) {
+			System.out.println("Greater is : "+val1);	
+		}
+		else if(val1==val2){
+			System.out.println(" equal to  : "+val1+" = "+val2);
+		}
+	}
+public static void main(String[] args) {
+	Scanner obj=new Scanner(System.in);
+	System.out.println("Enter first number");
+	int val1 = obj.nextInt();
+	System.out.println("Enter second number");
+	int val2 = obj.nextInt();
+	 Calculator obj1=new Calculator();
+	System.out.println("Enter select the operation you would like to perform ");
+	System.out.println("1.Addition");
+	System.out.println("2.Subtraction");
+	System.out.println("3.Multiplication");
+	System.out.println("4.Division");
+	System.out.println("5.Modulo");
+	System.out.println("6.Relational Operator");
+	int choice=obj.nextInt();
+
+	switch (choice) {
+	
+	case 1 :   int add = val1 + val2; 
+	          System.out.println("Addition = "+add);
+	break;
+	case 2 : int sub = val1 - val2;        
+    System.out.println("Subtraction = "+sub);
+    break;
+	case 3 :   int Mul = val1 + val2; 
+    System.out.println("Multiplication = "+Mul);
+    break;
+	case 4 :   int div = val1 / val2; 
+    System.out.println("Division = "+div);
+    break;
+	case 5 :   int mod = val1 % val2; 
+    System.out.println("Mod = "+mod);
+    break;
+	case 6 : obj1.checker(val1,val2);
+    break;
+    default : System.out.println("Invalid input");
+    break;
+	}
+}
+}
+
