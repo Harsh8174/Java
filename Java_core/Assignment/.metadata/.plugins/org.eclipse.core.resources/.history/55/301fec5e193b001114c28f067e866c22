@@ -1,0 +1,17 @@
+package Programs;
+
+interface Personaldetails{
+	void initiatePayment();
+    void processPayment();
+    void validatePayment()
+	authenticateUser()
+	confirmPayment()
+	refundPayment()
+	
+}
+
+
+public class P27_PaymentGateway {
+
+	
+}

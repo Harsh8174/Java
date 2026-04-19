@@ -1,0 +1,22 @@
+package Programs;
+
+import java.util.Scanner;
+
+public class TwoDMatrices {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter number of rows in array");
+	int rows=sc.nextInt();
+	System.out.println("Enter number of column in array");
+	int column=sc.nextInt();
+	//int arr[]=new int[rows][column];
+	for(int i=0;i<rows;i++) {
+		System.out.println("Enter element in : "+(i+1)+"first array");
+		int arr[]=new int[rows];
+	    //arr[i]=sc.nextInt();
+	   for(int j=0;j<column;j++) {
+		   arr[j]= sc.nextInt();   
+	   }
+	   }
+}
+}

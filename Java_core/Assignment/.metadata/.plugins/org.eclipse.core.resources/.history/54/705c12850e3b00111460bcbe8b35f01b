@@ -1,0 +1,19 @@
+package Programs;
+
+class Demo{
+	int a;
+	int b;
+	Demo(int a, int b){
+		//intialize object
+		this.a=a;
+		this.b=b;
+	}
+}
+
+public class ParameterisedConstructor {
+      public static void main(String[] args) {
+		Demo obj=new Demo(56,44);
+		System.out.println(obj.a);
+		System.out.println(obj.b);
+	}
+}

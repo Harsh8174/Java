@@ -1,0 +1,33 @@
+package Programs;
+import java.util.InputMismatchException;
+import 	java.util.Scanner;		
+
+public class P31_Exceptionhandling2 {
+
+		void checker() throws InputMismatchException,ArithmeticException{
+			   Scanner sc=new Scanner(System.in);
+			   System.out.println("Enter the num1");
+			   int num1=sc.nextInt();
+			   System.out.println("Enter the num2");
+			   int num2=sc.nextInt();
+			   
+				   int div = num1/num2;
+				   System.out.println("Division = "+div);
+			   
+		}
+		public static void main(String[] args) {
+			   P30_Exceptionhandling obj=new P30_Exceptionhandling();
+			  try { obj.checker();}
+			  catch(InputMismatchException e) {
+				  System.out.println("INPUT INVALID");
+			  }
+			  catch(ArithmeticException e) {
+				  System.out.println("INPUT shouble be greater then zero");
+			  }
+			  finally{
+				  System.out.println("Executed Always");
+
+			  }
+		}
+	}
+

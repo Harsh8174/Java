@@ -1,0 +1,30 @@
+package Programs;
+
+
+public class Stringpalindrome {
+     
+	void palindromechecker(String str) {
+		char str2[]=new char[str.length()];
+	    var x=0;
+		for(int i=str.length()-1;i>=0;i--) {
+			char str1 = str.charAt(i);
+			//System.out.println(str1);
+			for(int j=x;j<str.length()-i;j++)
+			str2[j] = str1;
+			x++;
+			}
+		//System.out.println(str2);
+	   if (str.equals(str2)) {
+		     System.out.println("Palindrome");
+	   }
+	   else {
+		   System.out.println("Not Palindrome");
+	   }
+	}
+	
+	
+	public static void main(String[] args) {
+	   Stringpalindrome obj=new Stringpalindrome();
+	   obj.palindromechecker("Harsh");
+}
+}

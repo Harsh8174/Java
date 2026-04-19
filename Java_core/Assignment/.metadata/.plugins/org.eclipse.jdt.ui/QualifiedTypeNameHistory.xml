@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="Programs.Stringpalindrome"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="Programs.Studentclass"/>
+    <fullyQualifiedTypeName name="Programs.P18_ConstructorOverloading"/>
+    <fullyQualifiedTypeName name="Programs.A"/>
+    <fullyQualifiedTypeName name="Programs.Employee"/>
+    <fullyQualifiedTypeName name="Programs.Dog"/>
+    <fullyQualifiedTypeName name="Programs.Animal"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="Programs.P30_Exceptionhandling"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+    <fullyQualifiedTypeName name="Programs.P32_CustomException"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="Programs.Example"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="Programs.ArithmeticExample"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 </qualifiedTypeNameHistroy>

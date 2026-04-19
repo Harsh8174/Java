@@ -1,0 +1,37 @@
+package Programs;
+
+import java.util.Scanner;
+
+class Example extends RuntimeException{
+      	Example(){
+      		System.out.println("Custom Exception");
+      	}
+}
+class ArithmeticExample extends Example{
+	  ArithmeticExample(String str){
+		  System.out.println(str);
+	  }  
+}
+public class P32_CustomException {
+        void checker(){
+        	  Scanner sc=new Scanner(System.in);
+			   System.out.println("Enter the num1");
+			   int num1=sc.nextInt();
+			   System.out.println("Enter the num2");
+			   int num2=sc.nextInt();
+			   if(num1==0 || num2==0) {
+			      throw new ArithmeticExample("Arithmetic Exception");
+			   }else{   int div = num1/num2;
+				   System.out.println("Division = "+div);
+			   }
+        }
+        public static void main(String[] args) {
+			P32_CustomException obj=new P32_CustomException();
+			   try {
+				   obj.checker();
+				   
+			   }catch(ArithmeticExample e) {
+				   System.out.println("Exeception handled using custom exception");
+			   }
+		}
+}
