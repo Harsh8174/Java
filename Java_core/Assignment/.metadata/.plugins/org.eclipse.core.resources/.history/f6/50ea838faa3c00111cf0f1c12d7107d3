@@ -1,0 +1,35 @@
+package Programs;
+
+import java.util.Scanner;
+
+public class P19_MatricesSum {
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Row ");
+		int row=sc.nextInt();
+		System.out.println("Enter Coloumn");
+		int coloumn=sc.nextInt();
+    	int arr1[][]=new int[row][coloumn];
+    	int arr2[][]=new int[row][coloumn];
+    	int arr3[][]=new int[row][coloumn];
+    	for(int i=0;i<row;i++) {
+    		for(int j=0;j<coloumn;j++) {
+    			arr1[i][j]=sc.nextInt();
+    			System.out.print("Element at ["+i+"]["+j+"]"+arr1[i][j]);
+    		}
+    	}
+    	for(int i=0;i<row;i++) {
+    		for(int j=0;j<coloumn;j++) {
+    			arr2[i][j]=sc.nextInt();
+    			System.out.println("Element at ["+i+"]["+j+"]"+arr2[i][j]);
+    		}
+    	}
+    	for(int i=0;i<row;i++) {
+    		for(int j=0;j<coloumn;j++) {
+    			arr3[i][j]=arr1[i][j]+arr2[i][j];
+    			System.out.println(arr3[i][j]);
+    		}
+    	}
+    	
+	}
+}

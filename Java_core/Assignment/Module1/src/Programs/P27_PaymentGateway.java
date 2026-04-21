@@ -1,49 +1,60 @@
 package Programs;
 
-interface Personaldetails{
-	void initiatePayment();
-    void processPayment();
-    void validatePayment();
-	void authenticateUser();
-	void confirmPayment();
-	void refundPayment();
+import java.util.Scanner;
+
+interface Paymentgateway{
+	void processPaymentamount(int amount);
+
+	void refund(int amount);
 }
 
-class Defines implements Personaldetails{
-	@Override
-	public void initiatePayment() {
-		// TODO Auto-generated method stub
-		
+class UPI implements Paymentgateway{
+	//Entering data for validation
+	String upi_id="98765423@ybl";
+	int account_balance=45554;
+	void validate(String upi_id,int amount) {
+		if(this.upi_id.equals(upi_id)) {
+	    processPaymentamount(amount);		
+		}
+		else {
+			System.out.println("Invalid UPI ID");
+		}
 	}
 	@Override
-	public void processPayment() {
-		// TODO Auto-generated method stub
-		
+	public void processPaymentamount(int amount) {
+		if(this.account_balance>amount) {
+			this.account_balance= this.account_balance-amount;
+		     int refund=500;
+		     refund(500);
+		     this.account_balance=this.account_balance+refund;
+			display(this.account_balance);	
+		}
+		else {
+			System.out.println("Balance is less");
+		}
+				
 	}
-	@Override
-	public void validatePayment() {
-		// TODO Auto-generated method stub
-		
+	void display(int balance) {
+	 System.out.println("Account balance :"+balance);
+     System.out.println("Payment Successful");		
 	}
+
 	@Override
-	public void authenticateUser() {
+	public void refund(int amount) {
 		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void confirmPayment() {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void refundPayment() {
-		// TODO Auto-generated method stub
-		
+	System.out.println("Refuncded amount :"+amount);	
 	}
 }
-
-
 public class P27_PaymentGateway {
 
-	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Payment below");
+		int amount = sc.nextInt();
+		System.out.println("Enter Upi ID below");
+		String upi_id=sc.next();
+		UPI obj=new UPI();
+		obj.validate(upi_id,amount);
+		
+	}
 }

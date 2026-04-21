@@ -1,15 +1,15 @@
 package Programs;
 
-class Parent {
+class Parent1 {
 	
-	Parent(){
+	Parent1(){
 		System.out.println("Parent class constructor");
 	}
 	void Parent_meth() {
 		System.out.println("Parent class method");
 	}
 }
-class child1 extends Parent{
+class child1 extends Parent1{
 	child1(){
 		System.out.println("child class constructor");
 	}
@@ -18,7 +18,7 @@ class child1 extends Parent{
 	}
 }
 
-public class P14_Singleinheritance {
+public class P14_singleinheritance {
 public static void main(String[] args) {
 	System.out.println("Program demonstrating single leve inheritance");
 	child1 obj=new child1();
