@@ -1,0 +1,14 @@
+package Programs;
+
+import java.util.HashMap;
+
+public class P41_Hashmap {
+          public static void main(String[] args) {
+			HashMap obj=new HashMap();
+			obj.put("1", "Andrew Anderson");
+			obj.put(2, "Peter Parker");
+			obj.put(8, "Jack Jackson");
+			obj.put(55, "null");
+			System.out.println(obj);
+		}
+}

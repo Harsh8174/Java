@@ -9,8 +9,9 @@ public class P37_Bufferreader {
         	String filepath = "E:\\Java\\Java_core\\Assignment\\Module1\\BufferReader.txt"; 
         	BufferedReader bfr=new BufferedReader(new FileReader(filepath));
             int i;
-            while(bfr.readLine()!=null) {
-            	System.out.println(bfr.readLine());
+            String str;
+            while((str=bfr.readLine())!=null) {
+            	System.out.println(str);
             }
             bfr.close();
             
