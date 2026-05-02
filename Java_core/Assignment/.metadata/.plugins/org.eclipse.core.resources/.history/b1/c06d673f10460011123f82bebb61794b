@@ -1,0 +1,33 @@
+package Programs;
+
+
+public class P20_Stringpalindrome {
+     
+	void palindromechecker(String str) {
+		char str2[]=new char[str.length()];
+	    var x=0;
+		for(int i=str.length()-1;i>=0;i--) {
+			char str1 = str.charAt(i);
+			//System.out.println(str1);
+			for(int j=x;j<str.length()-i;j++)
+			str2[j] = str1;
+			x++;
+			}
+		
+         String reversed=new String(str2);
+		
+		
+	   if (str.equals(reversed)) {
+		     System.out.println("Palindrome");
+	   }
+	   else {
+		   System.out.println("Not Palindrome");
+	   }
+	}
+	
+	
+	public static void main(String[] args) {
+	   P20_Stringpalindrome obj=new P20_Stringpalindrome();
+	   obj.palindromechecker("heloo");
+}
+}

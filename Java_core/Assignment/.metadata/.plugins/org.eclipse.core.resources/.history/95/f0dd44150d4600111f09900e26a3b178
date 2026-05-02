@@ -1,0 +1,26 @@
+package Programs;
+class myPerson extends Thread{
+	String name;
+	myPerson(String name){
+		this.name=name;
+	}
+	synchronized public void run() {
+		System.out.println(name+" "+ "is brunning");
+	}
+}
+public class P34_Synchronised {
+    public static void main(String[] args) {
+		myPerson p1=new myPerson("Andrew Anderson");
+		myPerson p2=new myPerson("Peter Parker");
+		myPerson p3=new myPerson("Berlin");
+		myPerson p4=new myPerson("Patrick james");
+		myPerson p5=new myPerson("Marco rubio");
+		p1.start();
+		p2.start();
+		p3.start();
+		p4.start();
+		p5.start();
+		
+		
+	}
+}

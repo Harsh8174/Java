@@ -1,0 +1,25 @@
+package Programs;
+import java.util.Scanner;
+public class P07_FibonacciSeries {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.print("Enter Number Please ");
+	var num = sc.nextInt();
+    int first =0;
+    int i=1;
+    int second=1;
+    int result=0;
+    
+   
+	while(i<=num) {
+		System.out.print(" "+first);
+		result = first + second;
+		first=second;
+		second=result;
+		
+		i++;
+	}
+    
+   
+}
+}

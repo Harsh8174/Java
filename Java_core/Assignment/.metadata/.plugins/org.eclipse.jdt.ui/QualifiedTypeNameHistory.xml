@@ -45,4 +45,7 @@
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
     <fullyQualifiedTypeName name="Programs.P44_Filedatareader"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="Programs.mythread"/>
+    <fullyQualifiedTypeName name="Programs.myPerson"/>
 </qualifiedTypeNameHistroy>
