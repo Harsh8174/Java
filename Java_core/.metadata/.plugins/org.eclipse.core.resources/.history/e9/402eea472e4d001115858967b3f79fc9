@@ -1,0 +1,73 @@
+package Programs;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class P04_CRUD {
+	
+		static Connection connection() {
+			try {
+	         	Class.forName("com.mysql.cj.jdbc.Driver");
+	         	}
+	         	catch (Exception e) {
+	 				// TODO: handle exception
+	 			e.printStackTrace();
+	         	  }
+	         	//Connection establish
+	         	try {
+	         	String url = "jdbc:mysql://localhost:3306/students";
+	         	String name = "root";
+	         	String password = "Pitambra@8174";
+	         	Connection con=DriverManager.getConnection(url, name, password);
+	         	System.out.println("Database connected Successfully");
+	         	return con;
+	         	//con.close();
+	         	}
+	         	catch (Exception e) {
+	 				// TODO: handle exception
+	 			e.printStackTrace();
+	         	}
+	         	return null;
+		}
+		
+	static 	void insert(Employee e) throws Exception {
+			    String query="insert into employee(name,Email,Gender,DATE_OF_BIRTH,SALARY)values(?,?,?,?)";
+			    Connection con= connection();
+			    PreparedStatement pst=con.prepareStatement(query);
+			   pst.setString(1,e.getName());
+			   pst.setString(2, e.getEmail());
+			   pst.setString(3, e.getGender());
+			   pst.setDate(4, Date.valueOf(e.getData_of_Birth()));
+			   pst.setDouble(5, e.getSalary());
+		}
+     public static void main(String[] args) {
+    	       Employee e=new Employee();
+    	       e.setName("Andrew Anderson");
+    	       e.setEmail("Andrew@1230");
+    	       e.setGender("Male");
+    	       e.setData_of_Birth(LocalDate.of(2004, 9, 22));
+    	       e.setSalary(78000);
+    	       System.out.println(e);
+         	
+          Scanner sc=new Scanner(System.in);
+          System.out.println("1.Insert");
+          System.out.println("2.Retrieve employee");
+          System.out.println("3.Update");
+          System.out.println("4.Delete");
+          int choice=sc.nextInt();
+          switch(choice) {
+          case 1:try { 
+        	  insert(e);
+          }catch (Exception e2) {
+			// TODO: handle exception
+            e2.printStackTrace();		
+          }
+           break;
+          }
+     }
+	}
+

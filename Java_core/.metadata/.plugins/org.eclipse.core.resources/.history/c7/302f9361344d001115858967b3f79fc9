@@ -1,0 +1,76 @@
+package Programs;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class P04_Statement {
+
+    public static void main(String[] args) {
+
+        try {
+
+            // Load Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Create Connection
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/students",
+                    "root",
+                    "root");
+
+            // Create Statement
+            Statement st = con.createStatement();
+
+            String insertQuery =
+                    "insert into employee(NAME,EMAIL,GENDER,DATE_OF_BIRTH,SALARY) " +
+                    "values('Harsh','harsh@gmail.com','MALE','2004-05-15',45000)";
+
+            st.executeUpdate(insertQuery);
+
+            System.out.println("Data Inserted");
+
+           
+            String updateQuery =
+                    "update employee set SALARY=50000 where ID=1";
+
+            st.executeUpdate(updateQuery);
+
+            System.out.println("Data Updated");
+
+           
+            String selectQuery = "select * from employee";
+
+            ResultSet rst = st.executeQuery(selectQuery);
+
+            System.out.println("\nEmployee Data");
+
+            while (rst.next()) {
+
+                System.out.println(
+                        rst.getInt("ID") + " | " +
+                        rst.getString("NAME") + " | " +
+                        rst.getString("EMAIL") + " | " +
+                        rst.getString("GENDER") + " | " +
+                        rst.getDate("DATE_OF_BIRTH") + " | " +
+                        rst.getDouble("SALARY")
+                );
+            }
+
+            
+            String deleteQuery =
+                    "delete from employee where ID=1";
+
+            st.executeUpdate(deleteQuery);
+
+            System.out.println("\nData Deleted");
+
+            // Close Connection
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
